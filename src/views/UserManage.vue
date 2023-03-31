@@ -1,5 +1,6 @@
 <template>
-    <div>
+     <div class="login-container">
+        <el-form ref="loginForm" >
         <el-card id="search">
             <el-row>
                 <el-col :span="20">
@@ -76,59 +77,7 @@
             :total= total
         >
         </el-pagination>
-        <!--<el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>-->
-        <!--用户信息编辑对话框-->
-        <!--
-        <el-dialog
-          @close="clearForm"
-          :title="title"
-          :visible.sync="dialogFormVisible"
-          >
-
-        <el-form :model="userForm" ref="userFormRef" rules="rules">
-            <el-form-item
-              label="用户名"
-              prop="username"
-              :label-width="fromLabelWidth"
-            >
-                <el-input v-model="userForm.username" auto-complete="off"></el-input>
-            </el-form-item>
-            <el-form-item v-if="userForm.id == null || userForm.id == undefined"
-                label="登陆密码"
-                prop="password"
-                :label-width="fromLabelWidth"
-            >
-                <el-input
-                    type="password"
-                    v-model="userForm.password"
-                    auto-complete="off"
-                ></el-input>
-            </el-form-item>
-            <el-form-item label="联系电话" :label-width="fromLabelWidth">
-            <el-input v-model="userForm.phone" auto-complete="off"></el-input>
-            </el-form-item>
-            <el-form-item label="用户状态" :label-width="fromLabelWidth">
-                <el-switch
-                    v-model="userForm.status"
-                    :active-value="1"
-                    :inactive-value="0"
-                >
-
-                </el-switch>
-            </el-form-item>
-            <el-form-item
-                label="电子邮件"
-                prop="email"
-                :label-width="fromLabelWidth"
-            >
-                <el-input v-model="userForm.email" auto-complete="off"></el-input>
-            </el-form-item>
-        </el-form>
-        <div slot="footer" class="dialog-footer">
-            <el-button @click="$event => dialogFormVisible = false">取 消</el-button>
-            <el-button type="primary" @click="saveUser">确定</el-button>
-        </div>
-        </el-dialog>-->
+    </el-form>
     </div>
 </template>
 
@@ -267,12 +216,27 @@ export default {
 
 
 <style>
+ 
 #search .el-input {
     width: 200px;
     margin-right: 10px;
 }
 .el-dialog .el-input{
+    width: "1100px"; 
+    top: "10px";
     width: 85%;
     
 }
+
+    .login-container {
+        min-height: 100%;
+        width: 100%;
+        background-color: #2d3a4b;
+        overflow: hidden;
+        background-image: url('../assets/bg.jpg');
+        background-size: 100%;
+    
+        display: flex;
+        align-items: center;
+    }
 </style>
